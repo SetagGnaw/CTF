@@ -1,0 +1,24 @@
+#brute force solution to bitwise pico2013
+
+verify_arr = [
+    193,
+    35,
+    9,
+    33,
+    1,
+    9,
+    3,
+    33,
+    9,
+    225,
+    ]
+possiblities_arr = []
+
+for x in range(0,255):
+	possiblities_arr.append(x)
+
+
+for y in verify_arr:
+	for x in possiblities_arr:
+		if (((x << 5 | x >> 3) ^ 111) & 255) == y:
+			print bin(x)
